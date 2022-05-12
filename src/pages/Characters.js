@@ -25,7 +25,7 @@ function Characters() {
   }, []); //<- mettre page dans le tableau pour la pagination
 
   return isLoading === true ? (
-    <div>En cours de chargement...</div>
+    <span class="loader">Load&nbsp;ng</span>
   ) : (
     <div className="characters-container">
       {data.results.map((character) => {
@@ -35,13 +35,13 @@ function Characters() {
         return (
           <div key={character._id} className="characters-cards">
             <Link to={`/character/${id}`}>
-              {<img src={imagePath} alt="" className="comics-img" /> ? (
-                <img src={imagePath} alt="" className="comics-img" />
+              {<img src={imagePath} alt="" className="characters-img" /> ? (
+                <img src={imagePath} alt="" className="characters-img" />
               ) : (
                 <img
                   src="../assets/img/deadpool-5783526_960_720.webp"
                   alt=""
-                  className="comics-img"
+                  className="characters-img"
                 />
               )}
               {/* <img src={imagePath} alt="" className="comics-img" /> */}

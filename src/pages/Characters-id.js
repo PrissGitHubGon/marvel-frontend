@@ -1,12 +1,12 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 function CharactersId() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       // const id = params.characterId;
@@ -23,22 +23,26 @@ function CharactersId() {
     };
     fetchData();
   }, [params.characterId]);
+  const imagePath = data.thumbnail.path + "/portrait_uncanny.jpg";
   return isLoading === true ? (
-    <div>En cours de chargement...</div>
+    <span class="loader">Load&nbsp;ng</span>
   ) : (
-    <div className="comics-id" key={params.characterId}>
-      coucou
-      {/* <img src={data.thumbnail.path + "." + data.thumbnail.extension} alt="" /> */}
-      <button
-        onClick={() => {
-          console.log(data._id);
-          // console.log(data.description);
-          // console.log(data.results);
-          // console.log(data.results.title);
-        }}
-      >
-        click
-      </button>
+    <div className="caracterId-container" key={params.characterId}>
+      <div className="caracterId-name">
+        <p>{data.name}</p>
+      </div>
+      <div className="cache-description">
+        <div className="caracterId-img">
+          <img src={imagePath} alt="" />
+        </div>
+        <div className="caracterId-comics">
+          <ul className="detail">
+            {data.comics.map((comic, index) => {
+              return <li key={index}>{comic.title}</li>;
+            })}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

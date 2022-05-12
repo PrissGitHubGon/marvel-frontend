@@ -1,7 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import Paginate from "../components/Paginate";
 
 function Comics() {
   const [data, setData] = useState();
@@ -26,26 +24,21 @@ function Comics() {
   // let numberOfPages = Math.floor(data.count / 100);
   // data.count % 100 > 0 && numberOfPages++;
   return isLoading === true ? (
-    <div>En cours de chargement...</div>
+    <span class="loader">Load&nbsp;ng</span>
   ) : (
     <div className="comics-container">
       {data.results.map((comics) => {
-        {
-          /* const id = comics._id; */
-        }
         const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg"; // afin d'afficher l'image de l'api qui n'a qu'une clé path et clé extension(https://developer.marvel.com/documentation/images) , Je stock dans la variable imagePath la clé thumbnail avec sa clé path puis je lui rajoute l'extension proposé sur le site
         console.log(comics.thumbnail);
         return (
           <div key={comics._id} className="comics-cards">
-            {/* <Link to={`/comics/${id}`}> */}
             <img src={imagePath} alt="" className="comics-img" />
-            {/* </Link> */}
+
             <div className="comics-cards-desc">
               <div className="comics-card-title">
                 <p>{comics.title}</p>
               </div>
               <div className="comics-card-description">
-                {/* <p>{comics.description}</p> */}
                 <p>
                   {comics.description
                     ? comics.description
