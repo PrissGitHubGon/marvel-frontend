@@ -34,6 +34,9 @@ function Comicsid({ imagePath }) {
       <button
         onClick={() => {
           console.log(data.title);
+          console.log(data.description);
+          console.log(data.results);
+          console.log(data.results.title);
         }}
       >
         click
