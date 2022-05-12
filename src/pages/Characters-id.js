@@ -23,7 +23,7 @@ function CharactersId() {
     };
     fetchData();
   }, [params.characterId]);
-  const imagePath = data.thumbnail.path + "/portrait_uncanny.jpg";
+  // const imagePath = data.thumbnail.path + "/portrait_uncanny.jpg";
   return isLoading === true ? (
     <span className="loader">Load&nbsp;ng</span>
   ) : (
@@ -40,7 +40,7 @@ function CharactersId() {
       </div>
       <div className="cache-description">
         <div className="caracterId-img">
-          <img src={imagePath} alt="" />
+          {/* <img src={imagePath} alt="" /> */}
         </div>
         <div className="caracterId-comics">
           <ul className="detail">
