@@ -24,7 +24,7 @@ function Search() {
         //   setInput(event.target.value);
         // }}
       />
-      <Link class="btn">
+      <Link to="" className="btn">
         <i class="fa fa-search "></i>
       </Link>
       {/* <div>{tab}</div> */}

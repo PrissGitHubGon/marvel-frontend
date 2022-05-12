@@ -40,10 +40,10 @@ function CharactersId() {
       </div>
       <div className="cache-description">
         <div className="caracterId-img">
-          {/* <img
+          <img
             src={data.thumbnail.path + "." + data.thumbnail.extension}
             alt=""
-          /> */}
+          />
         </div>
         <div className="caracterId-comics">
           <ul className="detail">

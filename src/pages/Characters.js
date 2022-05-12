@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Search from "../components/Search";
 // import Paginate from "../components/Paginate";
 
 function Characters() {
@@ -28,6 +29,8 @@ function Characters() {
     <span className="loader">Load&nbsp;ng</span>
   ) : (
     <div className="characters-container">
+      <Search />
+
       {data.results.map((character) => {
         const id = character._id;
         const imagePath = character.thumbnail.path + "/portrait_uncanny.jpg";
@@ -39,7 +42,7 @@ function Characters() {
                 <img src={imagePath} alt="" className="characters-img" />
               ) : (
                 <img
-                  src="../assets/img/deadpool-5783526_960_720.webp"
+                  src="../assets/img/pexels-erik-mclean-7524992.jpg"
                   alt=""
                   className="characters-img"
                 />
