@@ -168,7 +168,7 @@ svg:hover {
 .caracterId-container {
   padding-top: 10%;
   border: 1px solid black;
-  width: 0%;
+  width: 50%;
   margin: 0 auto;
 
   object-fit: cover;
@@ -184,6 +184,7 @@ svg:hover {
   border: 1px solid black;
   width: 40%;
   background-color: #7f130c;
+
   opacity: 0.8;
 }
 li {

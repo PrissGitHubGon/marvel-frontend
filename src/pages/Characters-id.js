@@ -29,7 +29,7 @@ function CharactersId() {
   ) : (
     <div className="caracterId-container" key={params.characterId}>
       <div className="caracterId-name">
-        {/* <p>{data.name}</p> */}
+        <p>{data.name}</p>
         <button
           onClick={() => {
             console.log(data.name);
@@ -40,7 +40,10 @@ function CharactersId() {
       </div>
       <div className="cache-description">
         <div className="caracterId-img">
-          {/* <img src={imagePath} alt="" /> */}
+          <img
+            src={data.thumbnail.path + "." + data.thumbnail.extension}
+            alt=""
+          />
         </div>
         <div className="caracterId-comics">
           <ul className="detail">
