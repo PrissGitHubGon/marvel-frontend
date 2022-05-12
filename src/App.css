@@ -183,14 +183,8 @@ svg:hover {
 .caracterId-comics {
   border: 1px solid black;
   width: 40%;
-  /* background-color: #7f130c; */
-  /* background: linear-gradient(
-    270deg,
-    rgba(26, 26, 26, 1) 0%,
-    rgba(241, 243, 245, 0) 100%
-  ); */
+  background-color: #7f130c;
   opacity: 0.8;
-  transition: margin-right 2s;
 }
 li {
   font-weight: 900;
