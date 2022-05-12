@@ -5,7 +5,7 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import Comics from "./pages/Comics";
 import Characters from "./pages/Characters";
-import Comicsid from "./pages/Comics-id";
+// import Comicsid from "./pages/Comics-id";
 import CharactersId from "./pages/Characters-id";
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Comics />} />
-          <Route path="/comics/:comicsId" element={<Comicsid />} />
+          {/* <Route path="/comics/:comicsId" element={<Comicsid />} /> */}
           <Route path="/characters" element={<Characters />} />
-          <Route path="/characters/:charactersId" element={<CharactersId />} />
+          <Route path="/character/:characterId" element={<CharactersId />} />
         </Routes>
       </div>
     </Router>

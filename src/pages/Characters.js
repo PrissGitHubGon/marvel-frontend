@@ -28,22 +28,36 @@ function Characters() {
     <div>En cours de chargement...</div>
   ) : (
     <div className="characters-container">
-      {data.results.map((characters) => {
-        const id = characters._id;
-        const imagePath = characters.thumbnail.path + "/portrait_uncanny.jpg";
-        console.log(characters.thumbnail);
+      {data.results.map((character) => {
+        const id = character._id;
+        const imagePath = character.thumbnail.path + "/portrait_uncanny.jpg";
+        console.log(character.thumbnail);
         return (
-          <div key={characters._id} className="characters-cards">
-            <Link to={`/characters/${id}`}>
-              <img src={imagePath} alt="" className="comics-img" />
+          <div key={character._id} className="characters-cards">
+            <Link to={`/character/${id}`}>
+              {<img src={imagePath} alt="" className="comics-img" /> ? (
+                <img src={imagePath} alt="" className="comics-img" />
+              ) : (
+                <img
+                  src="../assets/img/deadpool-5783526_960_720.webp"
+                  alt=""
+                  className="comics-img"
+                />
+              )}
+              {/* <img src={imagePath} alt="" className="comics-img" /> */}
             </Link>
             {/* <img src={imagePath} alt="" /> */}
             <div className="comics-cards-desc">
               <div className="characters-card-title">
-                <p>{characters.name}</p>
+                <p>{character.name}</p>
               </div>
               <div className="comics-card-description">
-                <p>{characters.description}</p>
+                <p>
+                  {character.description
+                    ? character.description
+                    : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
+                </p>
+                {/* <p>{characters.description}</p> */}
               </div>
             </div>
           </div>

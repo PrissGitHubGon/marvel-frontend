@@ -95,7 +95,7 @@ svg {
 }
 
 .comics-id {
-  padding-top: 10%;
+  padding-top: 20%;
 }
 .comics-cards {
   /* border: 1px solid black; */
@@ -107,7 +107,7 @@ svg {
 .comics-cards > img {
   border-radius: 20px;
   transition: transform 0.1s;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 img:hover {
   transform: scale(1.2);

@@ -9,7 +9,7 @@ function CharactersId() {
   const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
-      //   const id = params.characterId;
+      // const id = params.characterId;
       try {
         const response = await axios.get(
           `https://marvel-students.herokuapp.com/comics/${params.characterId}`
@@ -26,8 +26,19 @@ function CharactersId() {
   return isLoading === true ? (
     <div>En cours de chargement...</div>
   ) : (
-    <div className="" key={params.characterId}>
+    <div className="comics-id" key={params.characterId}>
       coucou
+      {/* <img src={data.thumbnail.path + "." + data.thumbnail.extension} alt="" /> */}
+      <button
+        onClick={() => {
+          console.log(data._id);
+          // console.log(data.description);
+          // console.log(data.results);
+          // console.log(data.results.title);
+        }}
+      >
+        click
+      </button>
     </div>
   );
 }

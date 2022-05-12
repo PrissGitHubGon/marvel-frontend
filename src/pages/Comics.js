@@ -30,20 +30,27 @@ function Comics() {
   ) : (
     <div className="comics-container">
       {data.results.map((comics) => {
-        const id = comics._id;
+        {
+          /* const id = comics._id; */
+        }
         const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg"; // afin d'afficher l'image de l'api qui n'a qu'une clé path et clé extension(https://developer.marvel.com/documentation/images) , Je stock dans la variable imagePath la clé thumbnail avec sa clé path puis je lui rajoute l'extension proposé sur le site
         console.log(comics.thumbnail);
         return (
           <div key={comics._id} className="comics-cards">
-            <Link to={`/comics/${id}`}>
-              <img src={imagePath} alt="" className="comics-img" />
-            </Link>
+            {/* <Link to={`/comics/${id}`}> */}
+            <img src={imagePath} alt="" className="comics-img" />
+            {/* </Link> */}
             <div className="comics-cards-desc">
               <div className="comics-card-title">
                 <p>{comics.title}</p>
               </div>
               <div className="comics-card-description">
-                <p>{comics.description}</p>
+                {/* <p>{comics.description}</p> */}
+                <p>
+                  {comics.description
+                    ? comics.description
+                    : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
+                </p>
               </div>
             </div>
           </div>

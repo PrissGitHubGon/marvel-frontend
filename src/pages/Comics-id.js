@@ -12,7 +12,7 @@ function Comicsid({ imagePath }) {
       //   const id = params.characterId;
       try {
         const response = await axios.get(
-          `https://marvel-students.herokuapp.com/comics/${params.comicsId}`
+          `https://marvel-students.herokuapp.com/comics/${params.characterId}`
         );
         console.log(params.comicsId);
         setData(response.data);
@@ -23,14 +23,13 @@ function Comicsid({ imagePath }) {
       }
     };
     fetchData();
-  }, [params.comicsId]);
+  }, [params.characterId]);
   return isLoading === true ? (
     <div>En cours de chargement...</div>
   ) : (
-    <div className="comics-id" key={params.comicsId}>
+    <div className="comics-id" key={params.characterId}>
       <img src={imagePath} alt="" className="comics-img" />
-      {/* <p>{}</p> */}
-      coucou
+
       <button
         onClick={() => {
           console.log(data.title);
