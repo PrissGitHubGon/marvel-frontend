@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Search from "../components/Search";
 
 function Comics() {
   const [data, setData] = useState();
@@ -27,6 +28,7 @@ function Comics() {
     <span className="loader">Load&nbsp;ng</span>
   ) : (
     <div className="comics-container">
+      <Search />
       {data.results.map((comics) => {
         const imagePath = comics.thumbnail.path + "/portrait_uncanny.jpg"; // afin d'afficher l'image de l'api qui n'a qu'une clé path et clé extension(https://developer.marvel.com/documentation/images) , Je stock dans la variable imagePath la clé thumbnail avec sa clé path puis je lui rajoute l'extension proposé sur le site
         console.log(comics.thumbnail);
