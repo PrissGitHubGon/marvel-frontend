@@ -23,27 +23,27 @@ function CharactersId() {
     };
     fetchData();
   }, [params.characterId]);
-  // const imagePath = data.thumbnail.path + "/portrait_uncanny.jpg";
+
   return isLoading === true ? (
     <span className="loader">Load&nbsp;ng</span>
   ) : (
     <div className="caracterId-container" key={params.characterId}>
       <div className="caracterId-name">
         <p>{data.name}</p>
-        <button
+        {/* <button
           onClick={() => {
             console.log(data.name);
           }}
         >
           bouton
-        </button>
+        </button> */}
       </div>
       <div className="cache-description">
         <div className="caracterId-img">
-          <img
+          {/* <img
             src={data.thumbnail.path + "." + data.thumbnail.extension}
             alt=""
-          />
+          /> */}
         </div>
         <div className="caracterId-comics">
           <ul className="detail">
