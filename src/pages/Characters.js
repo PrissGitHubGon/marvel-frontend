@@ -1,19 +1,20 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Search from "../components/Search";
+
 // import Paginate from "../components/Paginate";
 
 function Characters() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  // const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1);
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const characters = await data.find().limit(100).skip(0);
         const response = await axios.get(
-          // `https://marvel-students.herokuapp.com/characters?&page=${page}`
-          `https://marvel-students.herokuapp.com/characters`
+          `https://marvel-students.herokuapp.com/characters?&page=${characters}`
+          // `https://marvel-students.herokuapp.com/characters`
         );
         // console.log(response.data);
         setData(response.data);
@@ -23,13 +24,26 @@ function Characters() {
       }
     };
     fetchData();
-  }, []); //<- mettre page dans le tableau pour la pagination
+  }, [page]); //<- mettre page dans le tableau pour la pagination
 
   return isLoading === true ? (
     <span className="loader">Load&nbsp;ng</span>
   ) : (
     <div className="characters-container">
-      <Search />
+      <div className="search">
+        <input
+          className="text"
+          type="text"
+          placeholder="Your Search"
+          // value={input}
+          // onChange={(event) => {
+          //   setInput(event.target.value);
+          // }}
+        />
+        <a className="btn">
+          <i class="fa fa-search "></i>
+        </a>
+      </div>
 
       {data.results.map((character) => {
         const id = character._id;
@@ -66,6 +80,8 @@ function Characters() {
           </div>
         );
       })}
+      <button onClick={() => setPage(page - 1)}>Page précédente</button>
+      <button onClick={() => setPage(page + 1)}>Page suivante</button>
     </div>
   );
 }
