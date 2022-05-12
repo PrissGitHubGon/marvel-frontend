@@ -24,7 +24,7 @@ function Comics() {
   // let numberOfPages = Math.floor(data.count / 100);
   // data.count % 100 > 0 && numberOfPages++;
   return isLoading === true ? (
-    <span class="loader">Load&nbsp;ng</span>
+    <span className="loader">Load&nbsp;ng</span>
   ) : (
     <div className="comics-container">
       {data.results.map((comics) => {

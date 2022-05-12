@@ -168,7 +168,7 @@ svg:hover {
 .caracterId-container {
   padding-top: 10%;
   border: 1px solid black;
-  width: 50%;
+  width: 0%;
   margin: 0 auto;
 
   object-fit: cover;

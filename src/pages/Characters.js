@@ -25,7 +25,7 @@ function Characters() {
   }, []); //<- mettre page dans le tableau pour la pagination
 
   return isLoading === true ? (
-    <span class="loader">Load&nbsp;ng</span>
+    <span className="loader">Load&nbsp;ng</span>
   ) : (
     <div className="characters-container">
       {data.results.map((character) => {
