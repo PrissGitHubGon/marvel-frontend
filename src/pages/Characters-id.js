@@ -39,10 +39,11 @@ function CharactersId() {
         </button> */}
       </div>
       <div className="cache-description">
-        <div className="caracterId-img">
+        <div className="caracterId-img-container">
           <img
             src={data.thumbnail.path + "." + data.thumbnail.extension}
             alt=""
+            className="caracterId-img"
           />
         </div>
         <div className="caracterId-comics">
