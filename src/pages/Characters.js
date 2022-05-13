@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 function Characters() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const characters = await data.find().limit(100).skip(0);
+        // const characters = await data.find().limit(100).skip(0);
         const response = await axios.get(
-          `https://marvel-students.herokuapp.com/characters?&page=${characters}`
-          // `https://marvel-students.herokuapp.com/characters`
+          // `https://marvel-students.herokuapp.com/characters?&page=${characters}`
+          `https://marvel-students.herokuapp.com/characters`
         );
         // console.log(response.data);
         setData(response.data);
@@ -24,7 +24,7 @@ function Characters() {
       }
     };
     fetchData();
-  }, [page]); //<- mettre page dans le tableau pour la pagination
+  }, []); //<- mettre page dans le tableau pour la pagination
 
   return isLoading === true ? (
     <span className="loader">Load&nbsp;ng</span>
@@ -40,9 +40,9 @@ function Characters() {
           //   setInput(event.target.value);
           // }}
         />
-        <a className="btn">
+        <Link to="" className="btn">
           <i class="fa fa-search "></i>
-        </a>
+        </Link>
       </div>
 
       {data.results.map((character) => {
@@ -80,8 +80,8 @@ function Characters() {
           </div>
         );
       })}
-      <button onClick={() => setPage(page - 1)}>Page précédente</button>
-      <button onClick={() => setPage(page + 1)}>Page suivante</button>
+      {/* <button onClick={() => setPage(page - 1)}>Page précédente</button> */}
+      {/* <button onClick={() => setPage(page + 1)}>Page suivante</button> */}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Comics() {
   const [data, setData] = useState();
@@ -49,9 +50,9 @@ function Comics() {
             setInput(event.target.value);
           }}
         />
-        <a className="btn">
+        <Link to="" className="btn">
           <i class="fa fa-search "></i>
-        </a>
+        </Link>
       </div>
 
       <div className="comics-container">
