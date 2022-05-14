@@ -1,20 +1,23 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-// import Paginate from "../components/Paginate";
-
+// import "./paginate.css"
 function Characters() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  // const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1);
+  const [input, setInput] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         // const characters = await data.find().limit(100).skip(0);
         const response = await axios.get(
           // `https://marvel-students.herokuapp.com/characters?&page=${characters}`
-          `https://marvel-students.herokuapp.com/characters`
+          `https://marvel-students.herokuapp.com/characters?page=${page}`,
+          {
+            name: input,
+          }
         );
         // console.log(response.data);
         setData(response.data);
@@ -24,10 +27,12 @@ function Characters() {
       }
     };
     fetchData();
-  }, []); //<- mettre page dans le tableau pour la pagination
+  }, [page, input]); //<- mettre page dans le tableau pour la pagination
 
   return isLoading === true ? (
-    <span className="loader">Load&nbsp;ng</span>
+    <span className="loader" style={{ marginBottom: "430px" }}>
+      Load&nbsp;ng
+    </span>
   ) : (
     <div className="characters-container">
       <div className="search">
@@ -35,17 +40,15 @@ function Characters() {
           className="text"
           type="text"
           placeholder="Your Search"
-          // value={input}
-          // onChange={(event) => {
-          //   setInput(event.target.value);
-          // }}
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
         />
         <Link to="" className="btn">
           <i class="fa fa-search "></i>
         </Link>
       </div>
-
-      {data.results.map((character) => {
+      <div></div>
+      {data.results.slice(0, 99).map((character) => {
         const id = character._id;
         const imagePath = character.thumbnail.path + "/portrait_uncanny.jpg";
         console.log(character.thumbnail);
@@ -56,14 +59,12 @@ function Characters() {
                 <img src={imagePath} alt="" className="characters-img" />
               ) : (
                 <img
-                  src="../assets/img/pexels-erik-mclean-7524992.jpg"
+                  src="../assets/img/Marvel-Wallpaper-HD-41300.jpg  "
                   alt=""
                   className="characters-img"
                 />
               )}
-              {/* <img src={imagePath} alt="" className="comics-img" /> */}
             </Link>
-            {/* <img src={imagePath} alt="" /> */}
             <div className="comics-cards-desc">
               <div className="characters-card-title">
                 <p>{character.name}</p>
@@ -74,14 +75,22 @@ function Characters() {
                     ? character.description
                     : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit voluptate sed doloribus, tenetur porro veniam numquam,pariatur sapiente eius eos fugit possimus omnis. "}
                 </p>
-                {/* <p>{characters.description}</p> */}
               </div>
             </div>
           </div>
         );
       })}
-      {/* <button onClick={() => setPage(page - 1)}>Page précédente</button> */}
-      {/* <button onClick={() => setPage(page + 1)}>Page suivante</button> */}
+      <div className="paginate">
+        {" "}
+        <button onClick={() => setPage(page - 1)}>Page précédente</button>
+        <button onClick={() => setPage(page + 1)}>Page suivante</button>
+      </div>
+      <a href="#">
+        <i
+          class="fa fa-3x fa-arrow-circle-up"
+          style={{ marginLeft: "10%", textDecoration: "none", color: "black" }}
+        ></i>
+      </a>
     </div>
   );
 }

@@ -1,0 +1,73 @@
+/****************************************characters page********************/
+.characters-container {
+  padding-top: 20%;
+  /* border: 1px solid black; */
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.characters-cards {
+  /* border: 1px solid black; */
+  width: 30%;
+  margin-bottom: 3%;
+
+  object-fit: cover;
+}
+/****************************************characters ID page********************/
+.caracterId-container {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  /* border: 1px solid black; */
+  width: 50%;
+  /* height: 520px; */
+  height: 100%;
+  margin: 0 auto;
+
+  object-fit: cover;
+}
+.caracterId-img-container {
+  width: 100%;
+  height: 400px;
+  /* border: 1px solid rgb(207, 14, 14); */
+}
+.caracterId-img {
+  object-fit: cover;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: -4px -4px 10px 0px rgba(128, 0, 0, 0.7);
+}
+.caracterId-name {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 20px;
+  height: 7%;
+  text-align: center;
+  font-size: 27px;
+  font-weight: 900;
+  font-family: "Marvel", sans-serif;
+  /* margin-bottom: 2%; */
+}
+.caracterId-description {
+  /* padding-top: 10%; */
+  display: flex;
+}
+.caracterId-comics {
+  /* border: 1px solid black; */
+  width: 83%;
+  background-color: #7f130c;
+  /* padding-top: 15%; */
+  height: 300px;
+  opacity: 0.8;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+/******************************************************************************************/
+li {
+  font-weight: 900;
+  font-family: "Marvel", sans-serif;
+  font-size: 25px;
+  line-height: 35px;
+}

@@ -1,0 +1,27 @@
+.paginate {
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+  /* border: 2px solid black; */
+  width: 25%;
+  margin-bottom: 10%;
+  height: 50px;
+}
+.paginate > button {
+  height: 80%;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(
+    270deg,
+    rgba(26, 26, 26, 1) 0%,
+    rgba(6, 123, 241, 0.688) 100%
+  );
+  cursor: pointer;
+}
+.paginate > button:hover {
+  background: linear-gradient(
+    270deg,
+    rgba(26, 26, 26, 1) 0%,
+    rgba(49, 146, 243, 0.688) 100%
+  );
+}

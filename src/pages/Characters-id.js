@@ -1,15 +1,15 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 function CharactersId() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
-      // const id = params.characterId;
       try {
         const response = await axios.get(
           `https://marvel-students.herokuapp.com/character/${params.characterId}`
@@ -30,15 +30,8 @@ function CharactersId() {
     <div className="caracterId-container" key={params.characterId}>
       <div className="caracterId-name">
         <p>{data.name}</p>
-        {/* <button
-          onClick={() => {
-            console.log(data.name);
-          }}
-        >
-          bouton
-        </button> */}
       </div>
-      <div className="cache-description">
+      <div className="caracterId-description">
         <div className="caracterId-img-container">
           <img
             src={data.thumbnail.path + "." + data.thumbnail.extension}
@@ -53,6 +46,19 @@ function CharactersId() {
             })}
           </ul>
         </div>
+      </div>
+      <div className="paginate">
+        {" "}
+        <button
+          onClick={() => navigate("/characters")}
+          style={{
+            marginLeft: "30px",
+            paddingRight: "30px",
+            paddingLeft: "30px",
+          }}
+        >
+          Retour
+        </button>
       </div>
     </div>
   );
