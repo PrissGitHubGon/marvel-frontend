@@ -1,6 +1,4 @@
 import React from "react";
-// import MenuHeader from "./MenuHeader";
-// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Header({ token, setUser }) {
@@ -67,7 +65,6 @@ function Header({ token, setUser }) {
               className="font-size"
               style={{ color: "rgba(128, 0, 0, 0.7)" }}
               onClick={() => {
-                //Je me déconnecte et je redirige l'utilsateur vers la home page
                 setUser(null);
                 navigate("/");
               }}

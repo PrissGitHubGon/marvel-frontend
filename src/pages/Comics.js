@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { HashLink } from "react-router-hash-link";
 function Comics() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -14,24 +14,14 @@ function Comics() {
         const response = await axios.get(
           `https://marvel-students.herokuapp.com/comics?page=${page}`
         );
-        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.log(error);
+        console.log("console log error =>", error);
       }
     };
     fetchData();
   }, [page]);
-  // const tab = [];
-  // for (let i = 0; i < data.length; i++) {
-  //   console.log("search =>", data[i].keywords);
-  //   if (data[i].keywords.indexOf(input) !== -1) {
-  //     if (tab.length < 20) {
-  //       tab.push(<p key={data[i].title}>{data[i].title}</p>);
-  //     }
-  //   }
-  // }
   return isLoading === true ? (
     <span className="loader" style={{ marginBottom: "430px" }}>
       Load&nbsp;ng
@@ -82,12 +72,12 @@ function Comics() {
         <button onClick={() => setPage(page + 1)}>Page suivante</button>
       </div>
 
-      <Link to="#">
+      <HashLink to="#top">
         <i
           class="fa fa-3x fa-arrow-circle-up"
           style={{ marginLeft: "10%", textDecoration: "none", color: "black" }}
         ></i>
-      </Link>
+      </HashLink>
     </div>
   );
 }

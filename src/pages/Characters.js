@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import "./paginate.css"
+import { HashLink } from "react-router-hash-link";
+
 function Characters() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +18,6 @@ function Characters() {
             name: input,
           }
         );
-        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -83,12 +83,12 @@ function Characters() {
         <button onClick={() => setPage(page - 1)}>Page précédente</button>
         <button onClick={() => setPage(page + 1)}>Page suivante</button>
       </div>
-      <Link to="#">
+      <HashLink to="#top">
         <i
           class="fa fa-3x fa-arrow-circle-up"
           style={{ marginLeft: "10%", textDecoration: "none", color: "black" }}
         ></i>
-      </Link>
+      </HashLink>
     </div>
   );
 }
