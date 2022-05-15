@@ -18,11 +18,9 @@ function App() {
 
   const setUser = (token) => {
     if (token !== null) {
-      //Action de connexion
       console.log("Création d'un cookie userTOken");
       Cookies.set("userToken", token, { expires: 10 });
     } else {
-      //action de déconnexion
       console.log("Suppression d'un cookie userToken");
       Cookies.remove("userToken");
     }

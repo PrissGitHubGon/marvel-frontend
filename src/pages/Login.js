@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import Cookies from "js-cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +12,6 @@ function Login({ setUser }) {
     try {
       event.preventDefault();
       const response = await axios.post("http://localhost:3001/user/login", {
-        // récupère bien le mail et le token mais ne redirige pas la page. Message d'erreur : setUser is not a function
         email: email,
         password: password,
       });
