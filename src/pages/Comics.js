@@ -82,12 +82,12 @@ function Comics() {
         <button onClick={() => setPage(page + 1)}>Page suivante</button>
       </div>
 
-      <a href="#">
+      <Link to="#">
         <i
           class="fa fa-3x fa-arrow-circle-up"
           style={{ marginLeft: "10%", textDecoration: "none", color: "black" }}
         ></i>
-      </a>
+      </Link>
     </div>
   );
 }
