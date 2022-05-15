@@ -3,7 +3,7 @@ import React from "react";
 // import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ token, setUser }) {
   const navigate = useNavigate();
 
   return (
@@ -41,6 +41,46 @@ function Header() {
         >
           Comics
         </button>
+        {token === null ? (
+          <>
+            {" "}
+            <button
+              className="font-size"
+              onClick={() => {
+                navigate("/user/login");
+              }}
+            >
+              <i class="fas fa-user"></i>
+            </button>
+            <button
+              className="font-size"
+              onClick={() => {
+                navigate("/user/register");
+              }}
+            >
+              <i class="fas fa-user-edit"></i>
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              style={{
+                background: "red",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                //Je me déconnecte et je redirige l'utilsateur vers la home page
+                setUser(null);
+                navigate("/");
+              }}
+            >
+              deconnection
+            </button>
+          </>
+        )}
+
         <button className="heart-icon">
           <i class="fa-2x fa-regular fa-heart"></i>
         </button>

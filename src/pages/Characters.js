@@ -11,9 +11,7 @@ function Characters() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const characters = await data.find().limit(100).skip(0);
         const response = await axios.get(
-          // `https://marvel-students.herokuapp.com/characters?&page=${characters}`
           `https://marvel-students.herokuapp.com/characters?page=${page}`,
           {
             name: input,
@@ -27,7 +25,7 @@ function Characters() {
       }
     };
     fetchData();
-  }, [page, input]); //<- mettre page dans le tableau pour la pagination
+  }, [page, input]);
 
   return isLoading === true ? (
     <span className="loader" style={{ marginBottom: "430px" }}>

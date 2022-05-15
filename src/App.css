@@ -4,6 +4,7 @@
 @import "./assets/style/spinner.css";
 @import "./assets/style/searchBar.css";
 @import "./assets/style/customScrollBar.css";
+@import "./assets/style/form.css";
 
 /********************GLOBAL*******************/
 .font-size {
@@ -49,7 +50,8 @@ svg:hover {
 }
 .header-menu-perso {
   height: 98%;
-  width: 30%;
+  width: 40%;
+  /* border: 1px solid black; */
 }
 .header-menu-perso > button {
   background-image: url(./assets/img/captain-america-g7c018314b_640.png);
