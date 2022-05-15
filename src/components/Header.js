@@ -64,19 +64,15 @@ function Header({ token, setUser }) {
         ) : (
           <>
             <button
-              style={{
-                background: "red",
-                color: "white",
-                border: "none",
-                cursor: "pointer",
-              }}
+              className="font-size"
+              style={{ color: "rgba(128, 0, 0, 0.7)" }}
               onClick={() => {
                 //Je me déconnecte et je redirige l'utilsateur vers la home page
                 setUser(null);
                 navigate("/");
               }}
             >
-              deconnection
+              <i class="fas fa-user-times"></i>
             </button>
           </>
         )}
