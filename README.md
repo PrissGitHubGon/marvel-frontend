@@ -50,9 +50,9 @@ BACK-END
 
 ### Installation
 
-1 - Clone the repo
+1. Clone the repo
 * ``git clone https://github.com/PrissGitHubGon/marvel-frontend.git``
-2 - Install "Yarn" package
+2. Install "Yarn" package
 * ``yarn add``
-3 - Lancer le projet
+3. Lancer le projet
 * ``yarn start``
