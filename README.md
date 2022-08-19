@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Marvel
+## 3️⃣ Projet
+Lors de mes 10 semaines de Bootcamp dans l'école de formation "Le Reacteur", j'ai eu comme Test technique  la réalisation du site Marvel.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Lors de cet excercice je devais : 
+* Créez un site en React (avec un routeur) qui contiendrait en haut : le logo MARVEL et un menu (personnages, comics, favoris).
+* Sur la page principale « personnages », je devais faire apparaître la liste des personnages MARVEL (100 par page), sous forme de fiche (photo, nom, description). En cliquant sur chaque fiche, il doit être possible d’accéder à une page regroupant les comics liés au personnage.
+* Sur la page « comics », je devais faire apparaître la liste des comics MARVEL,par ordre alphabétique, sous forme de fiche (photo, titre, description).
 
-## Available Scripts
+### Modification à venir
 
-In the project directory, you can run:
+* Intégrer la responsive
+* Intégrer un moteur de recherche, afin de rechercher par nom/titre
+* Créer un système permettant de mettre chaque fiche en favoris, en fonction des souhaits de l’utilisateur.
+* Créez un système d’authentification par email et mot de passe.
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Lien vers le site
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+⛔ En cours
 
-### `yarn test`
+### Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Aperçu du site avant 🔨🔨 Travaux 🔨🔨
 
-### `yarn build`
+![marvel](https://user-images.githubusercontent.com/87413559/183442834-456128be-16d9-4307-a047-c913bdcb0ef6.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Construit avec
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+FRONT-END
 
-### `yarn eject`
+* create-react-app
+* HTML / SCSS
+* yarn
+* axios
+* js-cookie
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+BACK-END
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* "cors": "^2.8.5",
+* "crypto-js": "^4.1.1",
+* "dotenv": "^16.0.0",
+* "express": "^4.17.3",
+* "express-formidable": "^1.2.0",
+* "mongoose": "^6.2.10",
+* "uid2": "^1.0.0"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Commencer à travailler
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the repo
+* ``git clone https://github.com/PrissGitHubGon/marvel-frontend.git``
+2. Install "Yarn" package
+* ``yarn add``
+3. Lancer le projet
+* ``yarn start``
