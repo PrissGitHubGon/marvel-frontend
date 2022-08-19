@@ -45,7 +45,7 @@ function Header({ token, setUser }) {
             <button
               className="font-size"
               onClick={() => {
-                navigate("/user/login");
+                navigate("/login");
               }}
             >
               <i class="fas fa-user"></i>
@@ -53,7 +53,7 @@ function Header({ token, setUser }) {
             <button
               className="font-size"
               onClick={() => {
-                navigate("/user/register");
+                navigate("/signup");
               }}
             >
               <i class="fas fa-user-edit"></i>

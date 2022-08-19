@@ -1,26 +1,32 @@
-import { useState } from "react";
+// ** Dependencies
 import axios from "axios";
+import Cookies from "js-cookie";
+// ** Hooks **
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function Login({ setUser }) {
+function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const { setBearerPresent, bearerPresent } = props;
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
-      const response = await axios.post("https://marvel-students.herokuapp.com/login", {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://marvel-students.herokuapp.com/login",
+        {
+          email: email,
+          password: password,
+        }
+      );
+      const token = await response.data.token;
 
-      console.log(response.data);
-      if (response.data.token) {
-        setUser(response.data.token);
-        navigate("/");
-      }
+      Cookies.set("bearerToken", token, { expires: 360 });
+
+      setBearerPresent(!bearerPresent);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
       console.log(error);

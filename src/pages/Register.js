@@ -1,43 +1,43 @@
-import { useState } from "react";
+// *** Dependencies**
 import axios from "axios";
+import Cookies from "js-cookie";
+// ** Hooks **
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Register({ setUser }) {
-  const [username, setUsername] = useState("");
+function Register(props) {
+  const { bearerPresent, setBearerPresent } = props;
+  const [newsletter, setNewsletter] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newsletter, setNewsletter] = useState(false);
-
   const [errorMessage, setErrorMessage] = useState("");
-
   const navigate = useNavigate();
+
   const handleSignup = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
-
-      setErrorMessage("");
-
       const response = await axios.post(
         "https://marvel-students.herokuapp.com/signup",
         {
-          //fonctionne en local , les users se créer en BDD
+          name: name,
           email: email,
-          username: username,
           password: password,
-          newsletter: newsletter,
+          // newsletter: newsletter,
         }
       );
 
-      if (response.data) {
-        console.log("Compte créé");
-        setUser(response.data.token);
-        navigate("/");
-      }
+      const token = await response.data.token;
+
+      Cookies.set("bearerToken", token, { expires: 360 });
+
+      setBearerPresent(!bearerPresent);
+      navigate("/");
     } catch (error) {
-      console.log(error.response.status);
       if (error.response.status === 409) {
         setErrorMessage("Cet email a déjà un compte !");
       }
+      console.log(error.response.status);
     }
   };
 
@@ -50,9 +50,9 @@ function Register({ setUser }) {
           <span>Name</span>
           <input
             placeholder="Enter your username"
-            value={username}
+            value={name}
             type="text"
-            onChange={(event) => setUsername(event.target.value)}
+            onChange={(event) => setName(event.target.value)}
           />
           <span>Email</span>
           <input
