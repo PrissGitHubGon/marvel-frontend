@@ -17,13 +17,16 @@ function Register({ setUser }) {
 
       setErrorMessage("");
 
-      const response = await axios.post("http://localhost:3001/user/register", {
-        //fonctionne en local , les users se créer en BDD
-        email: email,
-        username: username,
-        password: password,
-        newsletter: newsletter,
-      });
+      const response = await axios.post(
+        "https://marvel-students.herokuapp.com/signup",
+        {
+          //fonctionne en local , les users se créer en BDD
+          email: email,
+          username: username,
+          password: password,
+          newsletter: newsletter,
+        }
+      );
 
       if (response.data) {
         console.log("Compte créé");

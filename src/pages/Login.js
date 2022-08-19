@@ -11,7 +11,7 @@ function Login({ setUser }) {
   const handleLogin = async (event) => {
     try {
       event.preventDefault();
-      const response = await axios.post("http://localhost:3001/user/login", {
+      const response = await axios.post("https://marvel-students.herokuapp.com/login", {
         email: email,
         password: password,
       });
