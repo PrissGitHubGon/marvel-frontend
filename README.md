@@ -21,10 +21,14 @@ Lors de cet excercice je devais :
 
 ### Preview
 
-* Aperçu du site avant 🔨🔨 Travaux 🔨🔨
+* Avant 🔨🔨 Travaux 🔨🔨
 
 ![marvel](https://user-images.githubusercontent.com/87413559/183442834-456128be-16d9-4307-a047-c913bdcb0ef6.png)
 
+* Aprés  
+![image](https://user-images.githubusercontent.com/87413559/188663664-54341b42-cac4-4115-b179-8fc60a06ed04.png)
+
+Git Hub : https://github.com/PrissGitHubGon/Marvel.2-
 
 ### Construit avec
 
