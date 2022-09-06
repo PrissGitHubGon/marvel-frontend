@@ -15,9 +15,7 @@ Lors de cet excercice je devais :
 * Créez un système d’authentification par email et mot de passe.
 
 
-### Lien vers le site
 
-⛔ En cours
 
 ### Preview
 
